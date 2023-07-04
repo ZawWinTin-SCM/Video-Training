@@ -1,6 +1,4 @@
 $(document).ready(function () {
-    window.HELP_IMPROVE_VIDEOJS = false;
-
     let thumbnailVideos = document.querySelectorAll('.js-thumbnail-video');
     let videoPlayer = document.querySelector('.js-video-player');
     let videoPlayerSource = document.querySelector('.js-video-player-source');
