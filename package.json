@@ -8,5 +8,8 @@
   "scripts": {
     "dev": "tailwindcss -i src/app.css -o dist/tailwind.css",
     "watch": "tailwindcss -i src/app.css -o dist/tailwind.css --watch"
+  },
+  "dependencies": {
+    "@videojs/themes": "^1.0.1"
   }
 }

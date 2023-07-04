@@ -1,6 +1,6 @@
 $(document).ready(function () {
     let thumbnailVideos = document.querySelectorAll('.js-thumbnail-video');
-    let videoPlayer = document.querySelector('.js-video-player');
+    let videoPlayer = null;
     let videoPlayerSource = document.querySelector('.js-video-player-source');
     let videoPlayerBackground = document.querySelector('.js-video-player-background');
 
@@ -10,7 +10,8 @@ $(document).ready(function () {
             videoPlayerSource.setAttribute('src', videoSrc);
             videoPlayerBackground.classList.remove('hidden');
             videoPlayerBackground.classList.add('flex');
-            videoPlayer.load();
+            videoPlayer = videojs('video-player');
+            videoPlayer.src({type: "video/mp4", src: videoSrc});
             videoPlayer.play();
             thumbnail.pause();
             thumbnail.currentTime = 0;
@@ -31,6 +32,7 @@ $(document).ready(function () {
             videoPlayerBackground.classList.remove('flex');
             videoPlayerBackground.classList.add('hidden');
             videoPlayer.pause();
+            videoPlayer = null;
             videoPlayerSource.setAttribute('src', '');
         }
     });
